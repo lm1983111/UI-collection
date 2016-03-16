@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>JS循环倒计时</title>
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+		</style>
+	</head>
+
+	<body>
+		<div class="countdown-time">
+			距离活动结束还有：
+			<br />
+			<span id="timeDay"></span>天
+			<span id="timeHour"></span>时
+			<span id="timeMinute"></span>分
+			<span id="timeSecond"></span>秒
+		</div>
+		<script type="text/javascript">
+			 //设置每一秒调用一次倒计时函数
+			setTimeout("countDown()", 0);
+			 //设定活动结束时间
+			var timeEnd = new Date("2016/10/06 09:58:00");
+			timeEnd = timeEnd.getTime(); //获取指定的时间2015/10/06 09:58:00距离1970 年 1 月 1 日之间的毫秒数
+			 //定义倒计时函数
+			function countDown() {
+				var timeNow = new Date(); //获取当前时间
+				timeNow = timeNow.getTime(); //获取当前时间距离1970 年 1 月 1 日之间的毫秒数
+				var timeDistance = timeEnd - timeNow; //时间差：活动结束时间减去当前时间
+				var intDay, intHour, intMinute, intSecond;
+				if (timeDistance >= 0) {
+					//计算剩余整天，得到新的剩余毫秒时间
+					intDay = Math.floor(timeDistance / 86400000); //得到剩余的整天
+					timeDistance -= intDay * 86400000; //得到减去整天后的新的timeDistance毫秒时间
+					//					alert(timeDistance);
+					//计算剩余整时，得到新的剩余毫秒时间
+					intHour = Math.floor(timeDistance / 3600000); //得到剩余整时
+					timeDistance -= intHour * 3600000; //得到减去整时后的新的timeDistance毫秒时间
+					//计算剩余整分，得到新的剩余毫秒时间
+					intMinute = Math.floor(timeDistance / 60000); //得到剩余整分
+					timeDistance -= intMinute * 60000; //得到减去整分后的新的timeDistance毫秒时间
+					//计算剩余整秒
+					intSecond = Math.floor(timeDistance / 1000); //得到剩余整秒
+					//判断整时小于10时，前面加0进行占位
+					if (intHour < 10) {
+						intHour = "0" + intHour;
+					}
+					//判断整分小于10时，前面加0进行占位
+					if (intMinute < 10) {
+						intMinute = "0" + intMinute;
+					}
+					//判断整秒小于10时，前面加0进行占位
+					if (intSecond < 10) {
+						intSecond = "0" + intSecond;
+					}
+					//往html插入倒计时数据
+					$("#timeDay").html(intDay);
+					$("#timeHour").html(intHour);
+					$("#timeMinute").html(intMinute);
+					$("#timeSecond").html(intSecond);
+					setTimeout("countDown()", 1000);
+				} else {
+					//指定的结束日期结束后，往后推迟3天，或者称之为：往后加3天
+					//在这里可以非常灵活的设置：比如往后推迟2天或往后加2天：2*24*60*60*1000
+					//比如往后推迟1天或往后加1天：1*24*60*60*1000
+					//比如往后推迟2小时或往后加2小时：2*60*60*1000
+					// 比如往后推迟40分钟或往后加40分钟：40*1000这里设置根据大家需要，灵活设置。
+					timeEnd = timeEnd + 3 * 24 * 60 * 60 * 1000;
+					setTimeout("countDown()", 1000);
+				}
+			}
+		</script>
+	</body>
+
+</html>

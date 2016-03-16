@@ -1,0 +1,36 @@
+@base: #f938ab;
+
+.box-shadow(@style, @c) when (iscolor(@c)) {
+  -webkit-box-shadow: @style @c;
+  box-shadow:         @style @c;
+}
+.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+  .box-shadow(@style, rgba(0, 0, 0, @alpha));
+}
+.box {
+  color: saturate(@base, 5%);
+  border-color: lighten(@base, 30%);
+  div { .box-shadow(0 0 5px, 30%) }
+}
+
+@light-gray:#999999;
+@heavy-gray:@light-gray - #888;
+
+#header{
+    color: @heavy-gray;
+}
+.bordered{
+    border:1px solid #888888;
+}
+.menu-box{
+    color: blue;
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 14px;
+    .bordered;
+}
+
+
+

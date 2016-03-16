@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="checkbox" name="check_id" value="checkbox" onclick="isaccepted();" />同意服务条款
+		<input type="submit" id="submit" value="提交" disabled />
+		<script type="text/javascript">
+			function isaccepted() {
+				if (document.getElementById("check_id").checked == true) {
+					document.getElementById("submit").disabled = false;
+				} else {
+					document.getElementById("submit").disabled = true;
+				}
+			}
+		</script>
+	</body>
+
+</html>

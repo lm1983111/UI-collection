@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>最大化最小化</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+		    body{ position: relative;}
+			.all-wrap{ position: relative; }
+			.header{
+				position: relative;
+				display: block;
+				height: 50px;
+				width: 100%;
+				padding-right: 130px;
+				background: blue;
+			}
+			.header ul{ 
+			    position: relative;
+			    display: block;
+			    float: right;
+			    height: 50px;
+			}
+			.header ul li{
+				position: relative;
+				display: block;
+				float: left;
+				height: 100%;
+			}
+			.header ul li a{ display: inline-block; padding: 10px; color: #fff;}
+			.header .btn-wrap{ position: absolute; right: 0; top: 0;}
+			.header .btn-wrap a{ position: relative; display: block; float: right; padding: 2px 20px; color: #fff; background: #00649A; font: 20px/15px "微软雅黑"; margin-left: 5px;}
+			.header .btn-wrap a:hover{ text-decoration: none; background: #003399;}
+			.container{ padding: 0; width: 100%; background: #ddd; }
+			.minimum-style{}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				//给container宽高赋值
+				var bodyHeight = $(window).height();
+				var bodyWidth = $(window).width();
+				var containerHeigth = $(window).height() - 50;
+				var containerWith = $(window).width();
+				$("body").css({"height":bodyHeight, "width":bodyWidth});
+				$(".container").css({"height":containerHeigth, "width":containerWith});
+				//关闭按钮绑定事件,定义函数
+				$("#closeBtn").on("click",function(){
+					$(".all-wrap").css("display","none")
+				});
+				//最小化按钮绑定事件,定义函数
+				$("#minimumBtn").on("click",function(){
+					var ct = document.getElementById("containerDiv");
+					//判断当前是最小化还是最大化
+					if(ct.style.display != "none"){
+						//alert(000)
+						$(".all-wrap").css({"position":"absolute","bottom":"0px","left":"0"})
+					    $(".container").css("display","none");
+					    $("#minimumBtn").html("□")
+					}else{
+						$(".container").css("display","block");
+						$("#minimumBtn").html("-")
+					}
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<div class="all-wrap">
+			<!-- header -->
+			<div class="header">
+				<ul>
+					<li><a>后退</a></li>
+					<li><a>前进</a></li>
+					<li><a>收藏</a></li>
+					<li><a>帮助</a></li>
+				</ul>
+				<div class="btn-wrap">
+					<a class="close-btn" id="closeBtn"> × </a>
+					<a class="minimum-btn" id="minimumBtn"> - </a>
+				</div>
+			</div>
+			<!-- container -->
+			<div class="container" id="containerDiv" style="display: block;">
+				内容区域
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>echarts-bars</title>
+		<script src="js/echarts.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="mainBar" style="height: 400px;"></div>
+		<script type="text/javascript">
+			 //配置路径
+			require.config({
+				paths: {
+					echarts: 'js/dist'
+				}
+			});
+			 //引入使用模块初始化填充数据
+			require([
+				'echarts',
+				'echarts/chart/bar'
+			], function(ec) {
+				var myChart = ec.init(document.getElementById('mainBar'));
+				var option = {
+					title: {
+						text: '同期与本期总销量对比',
+						subtext: '芙蓉王'
+					},
+					tooltip: {
+						trigger: 'axis'
+					},
+					legend: {
+						data: ['同期', '本期']
+					},
+					xAxis: [{
+						type: 'category',
+						data: ['8月', '9月', '10月', '11月', '12月', '1月', '2月', '3月', '4月', '5月', '6月', '7月']
+					}],
+					yAxis: [{
+						axisLabel: {
+							formatter: '{value} 万箱'
+						}
+					}],
+					series: [{
+						name: '同期',
+						type: 'bar',
+						itemStyle: {
+							normal: {
+								color: '#ccc',
+							}
+						},
+						data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+						markLine: {
+							data: [{
+								type: 'average',
+								name: '平均值'
+							}]
+						}
+					}, {
+						name: '本期',
+						type: 'bar',
+						itemStyle: {
+							normal: {
+								color: '#50aadc',
+							}
+						},
+						data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+						markLine: {
+							data: [{
+								type: 'average',
+								name: '平均值'
+							}]
+						}
+					}]
+				};
+				// 为echarts对象加载数据 
+				myChart.setOption(option);
+			});
+		</script>
+	</body>
+
+</html>

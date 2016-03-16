@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+	    <script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<label>
+			<input type="checkbox" name="agree" id="jsAgree" value="" onclick="confirmBox();"/> 我同意并遵守
+		</label>
+		<button class="btn btn-info" type="submit" id="jsRegisterBtn" disabled="disabled">注册</button>
+		<script type="text/javascript">
+			var checkboxId = document.getElementById("jsAgree");
+			var registerBtn = document.getElementById("jsRegisterBtn");
+			function confirmBox(){
+				if(checkboxId.checked){
+					registerBtn.removeAttribute("disabled")
+				}else{
+					registerBtn.disabled="true"
+				}
+			}
+		</script>
+	</body>
+</html>

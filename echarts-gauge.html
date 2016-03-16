@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>echart-gauge</title>
+		<script src="js/echarts.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="mainGauge" style="height: 400px;"></div>
+		<script type="text/javascript">
+			 //配置路径
+			require.config({
+				paths: {
+					echarts: 'js/dist'
+				}
+			});
+			 //引入模块初始化填充
+			require([
+				'echarts',
+				'echarts/chart/gauge'
+			], function(ec) {
+				var myChart = ec.init(document.getElementById('mainGauge'));
+				var option = {
+					tooltip: {
+						formatter: "{a} <br/>{b} : {c}"
+					},
+					series: [{
+						name: '业务指标',
+						type: 'gauge',
+						detail: {
+							formatter: '{value}'
+						},
+						max: '1250',
+						splitNumber: '5',
+						axisLine: {
+							show: true,
+							lineStyle: {
+								color: [
+									[0.2, '#228b22'],
+									[0.8, '#48b'],
+									[1, '#ff4500']
+								],
+								width: 20
+							}
+						},
+						//控制仪表盘结束角度
+						endAngle:45,
+						data: [{
+							value: 930,
+							name: '完成量'
+						}]
+					}]
+				};
+				myChart.setOption(option);
+			});
+		</script>
+	</body>
+
+</html>

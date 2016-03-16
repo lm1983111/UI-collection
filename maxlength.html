@@ -1,0 +1,22 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			function setShowLength(obj, maxlength, id) {
+				var rem = maxlength - obj.value.length;
+				var wid = id;
+				if (rem < 0) {
+					rem = 0;
+				}
+				document.getElementById(wid).innerHTML = "还可以输入" + rem + "字数";
+			}
+		</script>
+	</head>
+
+	<body>
+	    <textarea name="" rows="" cols="" type="text" value="" maxlength="20" onkeyup="javascript:setShowLength(this, 20, 'remainCost');"></textarea><span class="red" id="remainCost">还可以输入20字数</span>
+	</body>
+
+</html>

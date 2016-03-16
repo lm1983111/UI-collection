@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/echarts.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="main" style="height: 400px;"></div>
+		<script type="text/javascript">
+			 //配置路径
+			require.config({
+				paths: {
+					echarts: 'js/dist'
+				}
+			});
+			 //使用
+			require(
+				[
+					'echarts',
+					'echarts/chart/pie' //使用饼图模块
+				],
+				function(ec) {
+					//初始化dom
+					var myChart = ec.init(document.getElementById('main'));
+					var labelTop = {
+						normal: {
+							color: '#50aadc',
+							label: {
+								show: true,
+								position: 'center',
+								formatter: '{b}',
+								textStyle: {
+									baseline: 'bottom'
+								}
+							},
+							labelLine: {
+								show: false
+							}
+						}
+					};
+					var labelFromatter = {
+						normal: {
+							label: {
+								formatter: function(params) {
+									return 100 - params.value + '%'
+								},
+								textStyle: {
+									color: '#50aadc',
+									fontSize: '30',
+									fontFamily: 'Verdana',
+									baseline: 'top'
+								}
+							}
+						},
+					}
+					var labelBottom = {
+						normal: {
+							color: '#ccc',
+							label: {
+								show: true,
+								position: 'center'
+							},
+							labelLine: {
+								show: false
+							}
+						},
+						emphasis: {
+							color: 'rgba(0,0,0,0)'
+						}
+					};
+					//新增other外环白底
+					var labelBottom2 = {
+						normal: {
+							color: '#fff',
+							label: {
+								show: true,
+								position: 'center'
+							},
+							labelLine: {
+								show: false
+							}
+						},
+						emphasis: {
+							color: 'rgba(0,0,0,0)'
+						}
+					}
+					var radius = [60, 75];
+					//新增外环内外半径
+					var radius2 = [85, 95];
+					option = {
+						legend: {
+							show: true,
+							x: 'left',
+							y: 'bottom',
+							data: [
+								'GoogleMaps', 'Facebook', 'Youtube'
+							]
+						},
+						title: {
+							text: 'The App World',
+							x: 'left'
+						},
+						series: [{
+							type: 'pie',
+							center: ['20%', '50%'],
+							radius: radius,
+							itemStyle: labelFromatter,
+							data: [{
+								name: 'other',
+								value: 46,
+								itemStyle: labelBottom
+							}, {
+								name: 'GoogleMaps',
+								value: 54,
+								itemStyle: labelTop
+							}]
+						}, {
+							type: 'pie',
+							center: ['50%', '50%'],
+							radius: radius,
+							itemStyle: labelFromatter,
+							data: [{
+								name: 'other',
+								value: 0,
+								itemStyle: labelBottom
+							}, {
+								name: 'Facebook',
+								value: 100,
+								itemStyle: labelTop
+							}]
+						}, {
+							type: 'pie',
+							center: ['50%', '50%'],
+							radius: radius2,
+							itemStyle: labelFromatter,
+							data: [{
+								name: 'other',
+								value: 80,
+								itemStyle: labelBottom2
+							}, {
+								name: 'Facebook',
+								value: 20,
+								itemStyle: labelTop
+							}]
+						},
+						{
+							type: 'pie',
+							center: ['80%', '50%'],
+							radius: radius,
+							itemStyle: labelFromatter,
+							data: [{
+								name: 'other',
+								value: 65,
+								itemStyle: labelBottom
+							}, {
+								name: 'Youtube',
+								value: 35,
+								itemStyle: labelTop
+							}]
+						}]
+					};
+					myChart.setOption(option);
+				}
+			);
+		</script>
+	</body>
+
+</html>

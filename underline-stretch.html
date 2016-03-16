@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!--<link rel="stylesheet" type="text/css" href="css/global.css" />-->
+		<style type="text/css">
+			.bg-purple-gradient {
+				background: #774ac3;
+				background-image: -webkit-linear-gradient(bottom, #774ac3, #935ea6);
+				background-image: linear-gradient(to top, #774ac3, #935ea6)
+			}
+			.underline-stretch a {
+				position: relative;
+				text-decoration: none;
+			}
+			.underline-stretch a:after {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				display: inline-block;
+				height: 5px;
+				width: 100%;
+				background: #fff;
+				content: "";
+				-webkit-transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+				-moz-transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+				transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+			}
+			.underline-stretch a:hover:after,
+			.underline-stretch a:focus:after{
+				width: 0;
+				-webkit-transition: width 0.2s cubic-bezier(0.77, 0, 0.175, 1);
+		        -moz-transition: width 0.2s cubic-bezier(0.77, 0, 0.175, 1);
+				transition:width 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="container bg-purple-gradient white underline-stretch">
+			<h1>We build digital products for <a href="">innovative brands</a></h1>
+		</div>
+	</body>
+
+</html>

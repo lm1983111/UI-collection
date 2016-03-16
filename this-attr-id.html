@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>点击this获取它的id</title>
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+	</head>
+	<body>
+		<script type="text/javascript">
+		$(function(){
+			$("#myArray li a").on("click",function(){
+				alert($(this).attr("id"))
+			});
+		})
+		</script>
+		<div class="container">
+			<ul id="myArray">
+				<li><a id="1">一.谷歌</a></li>
+				<li><a id="2">二.百度</a></li>
+				<li><a id="3">三.好搜</a></li>
+				<li><a id="4">四.bing</a></li>
+				<li><a id="5">五.火狐</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

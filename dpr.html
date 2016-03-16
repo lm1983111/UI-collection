@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			.bdd {
+				height: 200px;
+				width: 200px;
+				margin: 20px auto;
+				border: 1px solid #cccccc;
+				background-color: #ffffff;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet/less" type="text/css" href="css/styles.less?120" />
+		<!-- set options before less.js script -->
+		<script>
+			less = {
+				env: "development",
+				async: false,
+				fileAsync: false,
+				poll: 1000,
+				functions: {},
+				dumpLineNumbers: "comments",
+				relativeUrls: false,
+				rootpath: ":/a.com/"
+			};
+		</script>
+		<script src="js/less.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+
+	<body>
+		<div class="bdd">
+			这种方式，可以精确地算出不同屏幕所应有的rem基准值，缺点就是要加载这么一段js代码，但个人觉得是这是目前最好的方案了。 因为这个方案同时解决了三个问题：
+		</div>
+		<div class="box" style="height: 200px; width: 100%; border-style: solid; border-width: 1px;">less盒子</div>
+		<div style="height: 100px; width: 300px;" id="header">我是重色</div>
+		<div class="menu-box">我是运用了混入mixin</div>
+		<!--<script type="text/javascript">
+			var dpr, rem, scale;
+			var docEl = document.documentElement;
+			var fontEl = document.createElement('style');
+			var metaEl = document.querySelector('meta[name="viewport"]');
+			dpr = window.devicePixelRatio || 1;
+			rem = docEl.clientWidth * 2 / 10;
+			scale = 1 / dpr;
+			 // 设置viewport，进行缩放，达到高清效果
+			metaEl.setAttribute('content', 'width=' + dpr * docEl.clientWidth + ',initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ',user-scalable=no');
+			 // 设置data-dpr属性，留作的css hack之用
+			docEl.setAttribute('data-dpr', dpr);
+			 // 动态写入样式
+			docEl.firstElementChild.appendChild(fontEl);
+			fontEl.innerHTML = 'html{font-size:' + rem + 'px!important;}';
+			 // 给js调用的，某一dpr下rem和px之间的转换函数
+			window.rem2px = function(v) {
+				v = parseFloat(v);
+				return v * rem;
+			};
+			window.px2rem = function(v) {
+				v = parseFloat(v);
+				return v / rem;
+			};
+			window.dpr = dpr;
+			window.rem = rem;
+		</script>-->
+	</body>
+
+</html>

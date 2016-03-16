@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>tranform and transition</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css" />
+		<style type="text/css">
+		    .col-6{ padding: 0;}
+		    .text-white, 
+		    .text-white h1, 
+		    .text-white h2,
+		    .text-white h3,
+			.text-white h4,
+			.text-white h5,
+			.text-white h6,
+			.text-white p,
+			.text-white span,
+            .text-white li{ color:#fff;}
+			.work-item {
+				text-align: center;
+				height: 400px;
+				overflow: hidden;
+				position: relative
+			}
+			.work-item a:hover .wi-caption {
+				text-decoration: none
+			}
+			@media screen and (max-width: 767px) {
+				.work-item {
+					height: 300px
+				}
+			}
+			.wi-img {
+				-webkit-transition: -webkit-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+				-moz-transition: -moz-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+				transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+				-webkit-transform: scale(1);
+				-moz-transform: scale(1);
+				-ms-transform: scale(1);
+				-o-transform: scale(1);
+				transform: scale(1);
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: auto 100%;
+				position: relative;
+				display: block;
+				min-height: 100%;
+				max-width: 100%;
+				z-index: 11
+			}
+			.work-item:hover .wi-img {
+				-webkit-transition: -webkit-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+				-moz-transition: -moz-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+				transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+				-webkit-transform: scale(1.2);
+				-moz-transform: scale(1.2);
+				-ms-transform: scale(1.2);
+				-o-transform: scale(1.2);
+				transform: scale(1.2)
+			}
+			.wi-caption {
+				-webkit-transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+				-moz-transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), -moz-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+				transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+				-webkit-transform: scale(1.2);
+				-moz-transform: scale(1.2);
+				-ms-transform: scale(1.2);
+				-o-transform: scale(1.2);
+				transform: scale(1.2);
+				height: 100%;
+				left: 0;
+				padding: 60px 30px;
+				position: absolute;
+				opacity: 0;
+				top: 0;
+				width: 100%;
+				z-index: 21
+			}
+			.wi-caption:after {
+				background: rgba(0, 0, 0, 0.9);
+				content: "";
+				left: 0;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				z-index: -20
+			}
+			@media screen and (min-width: 768px) {
+				.wi-caption {
+					padding: 100px 40px
+				}
+			}
+			@media screen and (min-width: 992px) {
+				.wi-caption {
+					padding: 100px 60px
+				}
+			}
+			@media screen and (min-width: 1200px) {
+				.wi-caption {
+					padding: 80px
+				}
+			}
+			.work-item:hover .wi-caption {
+				-webkit-transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+				-moz-transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), -moz-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+				transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+				-webkit-transform: scale(1);
+				-moz-transform: scale(1);
+				-ms-transform: scale(1);
+				-o-transform: scale(1);
+				transform: scale(1);
+				opacity: 1;
+				text-decoration: none
+			}
+			.wi-header {
+				color: #777;
+				font-family: "klavikawebboldcondenseditalic";
+				font-size: 24px;
+				font-weight: bold;
+				letter-spacing: 1px;
+				line-height: 1;
+				margin: 0 0 10px;
+				text-transform: uppercase
+			}
+			@media screen and (min-width: 992px) {
+				.wi-header {
+					font-size: 28px
+				}
+			}
+			.wi-tagline {
+				color: #444;
+				font-family: "opensans-regular";
+				font-size: 30px;
+				font-weight: lighter;
+				line-height: 1.2;
+				margin: 0 0 20px
+			}
+			@media screen and (min-width: 992px) {
+				.wi-tagline {
+					font-size: 40px
+				}
+			}
+			@media screen and (min-width: 1200px) {
+				.wi-tagline {
+					font-size: 50px
+				}
+			}
+			.wi-caption .btn{
+				text-transform: uppercase
+			}
+			.wi-caption .btn-white-empty:hover{
+				background-color: transparent;
+				color: #ddd;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-6 text-white wi-tourpedo work-item">
+					<div class="wi-img" style="background-image: url(img/1.jpg);"></div>
+					<a href="" class="wi-caption" data-project="Tourpedo">
+						<h3 class="wi-header">Home Cows</h3>
+						<h4 class="wi-tagline">Online green pastures</h4>
+						<button class="btn btn-white-empty btn-size18">View the Case Study</button>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

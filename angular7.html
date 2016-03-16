@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>http://www.runoob.com/try/try.php?filename=try_ng_controller_property</title>
+		<script src="js/angular.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div ng-app="myApp" ng-controller="personCtrl">
+			<input type="text" ng-model="firstName" />
+			<input type="text" ng-model="lastName" />
+			{{fullName()}}
+		</div>
+		<script>
+			var app = angular.module('myApp', []);
+			app.controller('personCtrl', function($scope) {
+			    $scope.firstName = "John";
+			    $scope.lastName = "Doe";
+			    $scope.fullName = function() {
+			        return $scope.firstName + " " + $scope.lastName;
+			    }
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/angular.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<form ng-app="myApp" ng-controller="validateCtrl" name="myForm" novalidate>
+			<p>用户名:
+				<br>
+				<input type="text" name="user" ng-model="user" required>
+				<span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+<span ng-show="myForm.user.$error.required">用户名是必须的。</span>
+				</span>
+			</p>
+
+			<input type="submit" value="" />
+		</form>
+		<script type="text/javascript">
+			var app = angular.module('myApp',[]);
+			app.controller('validateCtrl',function($scope){
+				$scope.user = 'John Doe';
+			});
+		</script>
+	</body>
+
+</html>

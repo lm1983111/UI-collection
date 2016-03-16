@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			http://www.w3school.com.cn/tiy/t.asp?f=hdom_event_clientx
+		</title>
+		<style type="text/css">
+		    .some-box{
+		    	display: block;
+		    	width: 500px;
+		    	height: 500px;
+		    	background-color: #EEA236;
+		    }
+		</style>
+		<script type="text/javascript">
+		    function showPosition(event){
+		    	if(event.pageX || event.pageY){
+		    		alert(0)
+		    		alert("x: " + event.pageX + "y: " + event.pageY)
+		    	}else{
+		    		alert("less ie8")
+		    		alert("x: " + event.clientX + "y: " + event.clientY)
+		    	}
+		    }
+		</script>
+	</head>
+	<body>
+		<div class="some-box" onmousedown="showPosition(event)"></div>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Ball(radius){
+				this.radu = radius;
+				this.say = function(){
+					//错误,记住this后面跟的是这个函数属性，而非参数
+					//console.log(this.radius)
+					console.log(this.radu)
+				};
+				
+			}
+			
+			var myBall = new Ball("10");
+			myBall.say()
+		</script>
+	</body>
+</html>

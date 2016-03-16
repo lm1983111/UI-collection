@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas" width="400" height="400"></canvas>
+		<script type="text/javascript">
+			//动画三要素：1不断更新对象的函数 2、绘制对象 3、定时器
+			var canvas = document.getElementById("canvas");
+			var myRect = function(){
+			if(canvas.getContext){
+				var ctx = canvas.getContext("2d");
+				ctx.rect(10,10,50,50);
+				ctx.strokeStyle = "red";
+				ctx.stroke();
+				ctx.fillStyle = "blue";
+				ctx.fill();
+			}}
+			new myRect();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>
+		</title>
+		<style type="text/css">
+		    *{
+		    	margin: 0;
+		    	padding: 0;
+		    }
+		    body{
+		    	border: 10px solid #BCE8F1;
+		    }
+		    .abox{
+		    	width: 300px;
+		    	height: 300px;
+		    	margin: 10px;
+		    	background-color: #F0AD4E;
+		    }
+		</style>
+	</head>
+	<body style="height: 5000px;">
+		<div class="abox" id="aBox" ontouchstart="soo(event)"></div>
+		<script type="text/javascript">
+		    var utils = {};
+		    utils.cattureTouch = function(element){
+		    	var touch = {x:null, y:null, isPressed:false};
+		    	element.addEventListener('touchstart',function(event){
+		    		touch.isPressed = true;
+		    	},false);
+		    	
+		    	element.addEventListener('touchend',function(event){
+		    		touch.isPressed = false;
+		    		touch.x = null;
+		    		touch.y = null;
+		    	},false);
+		    	
+		    	element.addEventListener('touchmove',function(event){
+		    		var x, y
+		    		var touch_event = event.touches[0]; //frist touch
+		    		
+		    		if(touch_event.pageX || touch_event.pageY){
+		    			x = touch_event.pageX;
+		    			y = touch_event.pageY;
+		    		}
+		    		//x -= offsetLeft;
+		    		//y -= offsetTop;
+		    		touch.x = x;
+		    		touch.y = y;
+		    	},false);
+		    	
+		    	return touch;
+		    	//alert(touch)
+		    }
+		    
+		    //初始化一个touch对象
+		    window.onload = function(){
+		    	var aBox = document.getElementById('aBox')
+			    var touch = utils.cattureTouch(aBox);
+			    if(touch.isPressed){
+			    	alert(touch.x)
+			    }
+		    }
+		    
+		    function soo(e){
+		    	alert(0)
+//		    	console.log(e.changedTouches[0]);
+//		        console.log(e.targetTouches[0]);
+//		        console.log(e.touches[0]);
+                console.log(e)
+                console.log(e.touches)
+                console.log(e.touches[0].pageX)
+		    }
+//		    aBox.touchmove(function (e) {
+//		        console.log(e.changedTouches[0]);
+//		        console.log(e.targetTouches[0]);
+//		        console.log(e.touches[0]);
+//		    });
+		</script>
+	</body>
+</html>

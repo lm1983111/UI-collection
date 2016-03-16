@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			jquery源码-Calculate pageX/Y
+		    http://shanmao.me/web/js/pagex-clientx-offsetx-layerx-de-qu-bie
+		    http://blog.sina.com.cn/s/blog_780a94270101kdgo.html
+		    http://www.cnblogs.com/trlanfeng/archive/2012/11/04/2753280.html
+		</title>
+		<style type="text/css">
+		    *{
+		    	margin: 0;
+		    	padding: 0;
+		    }
+		    body{
+		    	border: 10px solid #0000CC;
+		    }
+			.abox{
+				display: block;
+				width: 100px;
+				height: 100px;
+				margin-left: 30px;
+				background-color: #EEA236;
+			}
+		</style>
+	</head>
+	<body style="height: 5000px;">
+		<div class="abox" id="aBox">
+		</div>
+		<script type="text/javascript">
+		    function cuptruePosition(event){
+		    	//不是所有浏览器支持pageY
+		    	alert(event.pageY);
+		    	//在有滚动条的情况下会显示为相对视口的坐标值
+		    	alert(event.clientY); 
+		    }
+		    var aBox = document.getElementById("aBox");
+		    aBox.addEventListener("click",cuptruePosition,false)
+		</script>
+	</body>
+</html>

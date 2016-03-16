@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>构造函数</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		    //创建一个构造函数
+		    function MyFunction(person){
+		    	this.name = person;
+		    	this.say = function(){
+		    		console.log("my name is" + this.name)
+		    	}
+		    }
+		    //new一个实例，这个实例就共有了构造函数的属性和方法
+		    var functionA = new MyFunction("wlg");
+		    //调用构造函数的方法
+		    functionA.say();
+		    
+		    
+		</script>
+	</body>
+</html>

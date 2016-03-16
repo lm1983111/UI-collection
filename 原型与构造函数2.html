@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Ball(radius){
+				this.rad = radius;
+				this.say = function(){
+					console.log(this.rad)
+				};
+				
+			}
+			
+			var myBall = new Ball("10");
+			myBall.say()
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button ng-click="editUser('new')">Create New User</button>
+		<hr>
+	    <h3 ng-show="edit">Create New User:</h3>
+	    <h3 ng-hide="edit">Edit User:</h3>
+	    <form>
+	    	<div>
+	    		<label>First Name:</label>
+	    		<input ng-model="fName" ng-disabled="!edit">
+	    	</div>
+	    	<div>
+	    		<label>Last Name:</label>
+	    		<input ng-model="lName" ng-disabled="!edit">
+	    	</div>
+	    	<div>
+	    		<label>Password:</label>
+	    		<input ng-model="passw1">
+	    	</div>
+	    	<div>
+	    		<label>Repeat:</label>
+	    		<input ng-model="passw2">
+	    	</div>
+	    </form>
+	    <hr>
+	    <button ng-disabled="error || incomplete">Save Changes</button>
+	</body>
+</html>

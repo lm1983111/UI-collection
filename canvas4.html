@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500"></canvas>
+		<script type="text/javascript">
+		    //定义构造函数
+		    function Ball(radius, color){
+		    	this.radius = radius;
+		    	this.color = color;
+		    	this.x = 0;
+		    	this.y = 0;
+		    }
+		    
+		    //new一个新实例
+		    var ball = new Ball("20","blue");
+		    
+		    //通过原型给构造函数Ball添加画圆的方法
+		    Ball.prototype.draw = function(ctx){
+		    	//console.log("dede")
+		    	ctx.save();
+                ctx.translate(this.x, this.y);
+		    	ctx.beginPath();
+		    	ctx.arc(100,100,this.radius,0,(Math.PI*2),true);
+		    	ctx.closePath();
+		    	ctx.fillStyle = this.color;
+		    	ctx.fill();
+		    }
+		    
+		    var canvas = document.getElementById("canvas");
+		    if(canvas.getContext){
+		    	var ctx = canvas.getContext("2d")
+		    }
+		    
+		    var angle = 0;
+		    //让圆形上下动起来
+		    (function drawFrame(){
+		    	window.requestAnimationFrame(drawFrame,canvas);
+		    	ctx.clearRect(0,0,canvas.width,canvas.height);
+		    	
+		    	ball.y = Math.sin(angle);
+		    	angle += 0.1;
+		    	
+		    	//new的新实例调用原型添加的方法画圆
+		        ball.draw(ctx);
+		    }());
+		    
+		    
+		</script>
+	</body>
+</html>

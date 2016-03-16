@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>http://caibaojian.com/javascript-stoppropagation-preventdefault.html</title>
+		<style type="text/css">
+			div{
+				height: 400px;
+				width: 400px;
+				background-color: #dddddd;
+			}
+			ul, li{
+				list-style: none;
+			}
+			ul{
+				height: 200px;
+				width: 200px;
+				background-color: burlywood;
+			}
+			li{
+				height: 100px;
+				width: 100px;
+				background-color: aquamarine;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div onclick="alert('div')">
+		   <ul onclick="alert('ul')">
+		   	<li onclick="alert('li')"></li>
+		   </ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas" width="500px" height="500px"></canvas>
+		<script type="text/javascript">
+			var c = document.getElementById("canvas");
+			var ctx = c.getContext("2d");
+			ctx.fillStyle = "red";
+			ctx.fillRect(40,40,100,100);
+			
+//			ctx.globalCompositeOperation ="destination-over";
+			ctx.globalCompositeOperation="source-over";
+			
+			ctx.fillStyle = "blue";
+			ctx.fillRect(20,20,100,100);
+			
+		</script>
+	</body>
+</html>

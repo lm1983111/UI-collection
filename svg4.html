@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style type="text/css">
+			.svg-wrap {
+				position: relative;
+				background-color: #eeeeee;
+			}
+			
+			.pg3svg {
+				position: absolute;
+				top: 30px;
+				left: 30px;
+				background-color: #1badc4;
+				width: 200px;
+				height: 120px;
+				/*-webkit-transform: rotate(-20deg);*/
+			}
+			.xtime{
+				font-size: 8px;
+			}
+			.ypressure{
+				font-size: 8px;
+			}
+			.head-num{
+				font-size: 20px;
+				font-weight: 500;
+				font-family: "microsoft yahei";
+			}
+			.head-num-small{
+				font-size: 8px;
+				font-weight: 300;
+				font-family: "microsoft yahei";
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="svg-wrap">
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="115" width="190" class="pg3svg">
+				<g>
+					<path d="M20 60 C 30 60, 40 50, 50 50 S70 60, 80 60 S95 45, 110 45S125 55,135 60S150 60,165 60S180 70,193 70V100H20V60Z" stroke="none" stroke-width="0" fill="#32B5CA"/>
+					<path d="M20 80 C 30 80, 40 70, 50 70 S70 80, 80 80 S95 65, 110 65S150 90,165 90,S193 80, 193 80V100H20V80Z" stroke="none" stroke-width="0" fill="#40BFCE"/>
+					<path d="M20 60 C 30 60, 40 50, 50 50 S70 60, 80 60 S95 45, 110 45S125 55,135 60S150 60,165 60S180 70,193 70" stroke="white" stroke-width="1" fill="none"/>
+					<path d="M20 80 C 30 80, 40 70, 50 70 S70 80, 80 80 S95 65, 110 65S150 90,165 90,S193 80, 193 80" stroke="white" stroke-width="1" fill="none"/>
+					<line x1="20" y1="60" x2="20" y2="100" stroke="#58d2e0" stroke-width=".5" />
+					<line x1="50" y1="50" x2="50" y2="100" stroke="#58d2e0" stroke-width=".5" />
+					<line x1="80" y1="60" x2="80" y2="100" stroke="#58d2e0" stroke-width=".5" />
+					<line x1="110" y1="45" x2="110" y2="100" stroke="#58d2e0" stroke-width=".5" />
+					<line x1="140" y1="62" x2="140" y2="100" stroke="#58d2e0" stroke-width=".5" />
+					<line x1="165" y1="60" x2="165" y2="100" stroke="#58d2e0" stroke-width=".5" />
+					<line x1="193" y1="70" x2="193" y2="100" stroke="#58d2e0" stroke-width=".5" />
+					<!--circle-->
+					<circle cx="20" cy="60" r="2" stroke="white" fill="red" stroke-width="1" />
+					<circle cx="50" cy="50" r="2" stroke="white" fill="red" stroke-width="1" />
+					<circle cx="80" cy="60" r="2" stroke="white" fill="red" stroke-width="1" />
+					<circle cx="110" cy="45" r="2" stroke="white" fill="red" stroke-width="1" />
+					<circle cx="140" cy="62" r="2" stroke="white" fill="red" stroke-width="1" />
+					<circle cx="165" cy="60" r="2" stroke="white" fill="red" stroke-width="1" />
+					<circle cx="193" cy="70" r="2" stroke="white" fill="red" stroke-width="1" />
+					<!--circle 2-->
+					<circle cx="20" cy="80" r="2" stroke="white" stroke-width="1" fill="#1badc4"/>
+					<circle cx="50" cy="70" r="2" stroke="white" stroke-width="1" fill="#1badc4"/>
+					<circle cx="80" cy="80" r="2" stroke="white" stroke-width="1" fill="#1badc4"/>
+					<circle cx="110" cy="65" r="2" stroke="white" stroke-width="1" fill="#1badc4"/>
+					<circle cx="140" cy="80" r="2" stroke="white" stroke-width="1" fill="#1badc4"/>
+					<circle cx="165" cy="90" r="2" stroke="white" stroke-width="1" fill="#1badc4"/>
+					<circle cx="193" cy="80" r="2" stroke="white" stroke-width="1" fill="#1badc4"/>
+					<!--xtime-->
+					<text x="10" y="115" fill="white" class="xtime">09:00</text>
+					<text x="38" y="115" fill="white" class="xtime">09:30</text>
+					<text x="68" y="115" fill="white" class="xtime">10:00</text>
+					<text x="98" y="115" fill="white" class="xtime">10:30</text>
+					<text x="128" y="115" fill="white" class="xtime">11:00</text>
+					<text x="153" y="115" fill="white" class="xtime">11:30</text>
+					<text x="180" y="115" fill="white" class="xtime">12:00</text>
+					<!--ypressure-->
+					<text x="0" y="65" fill="white" class="ypressure">170</text>
+					<text x="0" y="85" fill="white" class="ypressure">80</text>
+					<!--head-num-->
+					<text x="30" y="15" fill="white" class="head-num">185</text>
+					<text x="100" y="15" fill="white" class="head-num">90</text>
+					<text x="150" y="15" fill="white" class="head-num">85</text>
+					<!--head-num-small-->
+					<line x1="80" y1="5" x2="80" y2="30" stroke="#58d2e0" stroke-width=".5" />
+					<line x1="140" y1="5" x2="140" y2="30" stroke="#58d2e0" stroke-width=".5" />
+					<text x="35" y="30" fill="#58d2e0" class="head-num-small">高压</text>
+					<text x="100" y="30" fill="#58d2e0" class="head-num-small">低压</text>
+					<text x="150" y="30" fill="#58d2e0" class="head-num-small">心率</text>
+					<circle cx="30" cy="26" r="2" stroke="white" fill="red" stroke-width="1" fill="none"/>
+					<circle cx="95" cy="26" r="2" stroke="white" fill="none" stroke-width="1" fill="none"/>
+				</g>
+			</svg>
+		</div>
+	</body>
+
+</html>

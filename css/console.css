@@ -1,0 +1,23 @@
+.form-control {
+    border-radius: 0;
+    font-size: 12px;
+    height: 32px;
+    padding: 6px;
+    transition: none 0s ease 0s ;
+}
+.form-inline .form-control {
+    width: auto;
+}
+.form-control:focus{
+	box-shadow: none;
+}
+.has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline{
+	color: #ee4400;
+}
+.has-error .form-control, input.ng-invalid.ng-dirty, textarea.ng-invalid.ng-dirty{
+	border-color: #ee4400;
+}
+.has-error .form-control:focus, input.ng-invalid.ng-dirty:focus, textarea.ng-invalid.ng-dirty:focus{
+	border-color: #ff3300;
+	box-shadow: none;
+}

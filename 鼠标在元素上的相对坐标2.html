@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			jquery源码-Calculate pageX/Y
+		    http://shanmao.me/web/js/pagex-clientx-offsetx-layerx-de-qu-bie
+		    http://blog.sina.com.cn/s/blog_780a94270101kdgo.html
+		    http://www.cnblogs.com/trlanfeng/archive/2012/11/04/2753280.html
+		</title>
+		<style type="text/css">
+		    *{
+		    	margin: 0;
+		    	padding: 0;
+		    }
+		    body{
+		    	border: 10px solid #BCE8F1;
+		    }
+		    .abox{
+		    	width: 100px;
+		    	height: 100px;
+		    	margin: 10px;
+		    	background-color: #F0AD4E;
+		    }
+		</style>
+	</head>
+	<body style="height: 5000px;">
+		<div class="abox" id="aBox"></div>
+		<script type="text/javascript">
+		    var aBox = document.getElementById("aBox");
+		    aBox.addEventListener("mousedown",function(event){
+		    	var x, y;
+		    	if(event.pageX || event.pageY){
+			    	x = event.pageX;
+			    	y = event.pageY
+			    }else{
+			    	var doc = document.documentElement, body = document.body;
+			    	x = event.clientX + (doc.scrollLeft || body.scrollLeft);
+			        y = event.clientY + (doc.scrollTop || body.scrollTop);
+			    }
+			    x -= aBox.offsetLeft;
+			    y -= aBox.offsetTop;
+			    alert("x:" + x + "y:" + y)
+		    },false)
+		    
+		</script>
+	</body>
+</html>

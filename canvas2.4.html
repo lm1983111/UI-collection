@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<canvas id="pg4Canvas" width="600" height="600"></canvas>
+		
+		<script type="text/javascript">
+			var canvas = document.getElementById("pg4Canvas");
+			if(canvas.getContext){
+				var ctx = canvas.getContext("2d");
+			}
+			
+			//构造函数
+			function MyFunction(x,y,radius,color){
+				this.x = x;
+				this.y = y;
+				this.radius = radius;
+				this.color = color;
+			}
+			
+			//用原型给构造函数添加方法sayradius
+			MyFunction.prototype.sayradius = function(){
+				console.log("半径是" + this.radius)
+			}
+			
+		    //用原型给构造函数添加方法saycolor
+		    MyFunction.prototype.saycolor = function(){
+		    	console.log("颜色是" + this.color)
+		    }
+		    
+		    //用原型给构造函数添加画圆的方法
+			MyFunction.prototype.draw = function(ctx){
+				ctx.beginPath();
+				ctx.arc(this.x,this.y,80,0,Math.PI*2,true);
+				ctx.stroke();
+			}
+			
+			
+			
+			//实例化构造函数
+			var someBall = new MyFunction("100","100","20","red");
+			var someBall2 = new MyFunction("150","150","20","red");
+			//实例化的函数调用构造函数方法
+			someBall.sayradius();
+			someBall.saycolor();
+			someBall.draw(ctx);
+			someBall2.draw(ctx);
+		</script>
+		
+	</body>
+
+</html>

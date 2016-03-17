@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>自画路径与http://codepen.io/chriscoyier/pen/bGyoz</title>
+		<style type="text/css">
+			.svg-cicle-wrap {
+				position: relative;
+				width: 270px;
+				height: 190px;
+			}
+			
+			.path {
+				stroke-dasharray: 1000;
+				stroke-dashoffset: 1000;
+				-webkit-animation: dash 5s linear alternate 1;
+				-webkit-animation-fill-mode: forwards;
+				-webkit-animation-delay: .1s;
+			}
+			
+			@-webkit-keyframes dash {
+				from {
+					stroke-dashoffset: 1000;
+				}
+				to {
+					stroke-dashoffset: 0;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<svg class="svg-cicle-wrap" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="340px" height="333px" viewBox="0 0 340 333" enable-background="new 0 0 340 333" xml:space="preserve">
+			<path d="M261 188C267 172, 270 154, 270 136C270 61, 210 0, 135 0C61 0, 0 61, 0 136C0 150, 2 163, 7 177" class="path" id="path" fill="#FFFFFF" stroke="#000000" stroke-width="4" stroke-miterlimit="10"/>
+		</svg>
+
+	</body>
+
+</html>

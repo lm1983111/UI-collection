@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>自画路径与http://codepen.io/chriscoyier/pen/bGyoz</title>
+		<style type="text/css">
+			.svg-cicle-wrap {
+				position: relative;
+				width: 280px;
+				height: 200px;
+				display: block;
+				padding: 10px;
+			}
+			
+			.half-circle {
+				stroke-dasharray: 1000;
+				stroke-dashoffset: 1000;
+				-webkit-animation: dash 2s linear;
+				-webkit-animation-fill-mode: forwards;
+				-webkit-animation-delay: 0;
+			}
+			
+			@-webkit-keyframes dash {
+				from {
+					stroke-dashoffset: 1000;
+				}
+				to {
+					stroke-dashoffset: 0;
+				}
+			}
+			#triangle{
+				/*display: none;*/
+			}
+		</style>
+	</head>
+
+	<body>
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-cicle-wrap">
+			<path d="M261 188C267 172, 270 154, 270 136C270 61, 210 0, 135 0C61 0, 0 61, 0 136C0 150, 2 163, 7 177" class="half-circle" fill="none" stroke="#06e7fd" stroke-width="4"/>
+			<path d="M261 188C267 172, 270 154, 270 136C270 61, 210 0, 135 0C61 0, 0 61, 0 136C0 150, 2 163, 7 177" id="trianglePath" fill="none" stroke="none" stroke-width="0"/>
+			<path d="M12 0L-12 12L-12 -12Z" id="triangle" stroke="none" stroke-width="0" fill="#06e7fd">
+				<animateMotion dur="1s" repeatCount="1" rotate="auto">
+			       <mpath xlink:href="#trianglePath"/>
+			    </animateMotion>
+			</path>
+			
+		</svg>
+	</body>
+
+</html>

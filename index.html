@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>zepto</title>
+		<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+	    *{
+	    	margin: 0;
+	    	padding: 0;
+	    }
+		.text-content{
+			position: relative;
+			height: 2000px;
+			width: 100px;
+			background-color: #888;
+		}
+		.mybtn{
+			position: fixed;
+			top: 20px;
+			right: 10px;
+		}
+		.sub-span{
+			position: relative;
+			height: 100px;
+			width: 100px;
+			margin: 10px;
+			background-color: red;
+		}
+	</style>
+	<body>
+	
+		<div id="textContent" class="text-content">
+			文本内容文本内容文本内容文本内容<br />
+			文本内容文本内容文本内容文本内容<br />
+			文本内容文本内容文本内容文本内容<br />
+			文本内容文本内容文本内容文本内容<br />
+			文本内容文本内容文本内容文本内容<br />
+			文本内容文本内容文本内容文本内容<br />
+			文本内容文本内容文本内容文本内容<br />
+			文本内容文本内容文本内容文本内容<br />
+			文本内容文本内容文本内容文本内容<br />
+			
+			<span class="sub-span">span</span>
+		</div>
+		<button id="myBtn" class="mybtn">按钮</button>
+		<script type="text/javascript">
+			Zepto(function($){
+				var textContent = document.getElementById("textContent")
+				var myBtn = document.getElementById("myBtn");
+				var body = document.body;
+				$(myBtn).on("click", function(){
+					//$(textContent).hide()
+					alert($(body).scrollTop())
+					//$(body).scrollTop(100);
+				})
+				//获取指定元素距离页面顶部的距离
+				console.log($(".sub-span").offset().top)
+			})
+		</script>
+	</body>
+</html>

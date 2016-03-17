@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas" width="200" height="200"></canvas>
+		<script type="text/javascript">
+		    window.onload = function(){
+		    	var canvas = document.getElementById("canvas");
+				if(canvas.getContext){
+					var ctx = canvas.getContext("2d");
+					ctx.fillRect(25,25,100,100);
+					canvas.addEventListener("click",function(){
+						console.log("click")
+					})
+					
+					canvas.addEventListener("mousedown",function(){
+						console.log("mousedown")
+					})
+					
+					canvas.addEventListener("mouseup",function(){
+						console.log("mouseup")
+					})
+				}
+		    }
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="utf-8">
+        <script type="text/javascript" src="js/require.js"></script>
+        <script type="text/javascript">
+//          使用require.config来配置模块加载位置
+            require.config({
+            	paths:{
+            		"jquery":["http://code.jquery.com/jquery-1.12.0.min"],
+            		"a":"js/a"
+            	}
+            })
+            require(["jquery","a"],function(){
+            	alert("load finished")
+            });
+        </script>
+    </head>
+    <body>
+      <span>body</span>
+    </body>
+</html>

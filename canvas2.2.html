@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Bobbing 1</title>
+		<link rel="stylesheet" href="css/canvascss/style.css">
+	</head>
+
+	<body>
+		<header>
+		</header>
+		<canvas id="canvas" width="400" height="400" style="position: absolute; top: 100px;"></canvas>
+
+		<!--<script src="js/canvasjs/utils.js"></script>-->
+		<script src="js/canvasjs/ball.js"></script>
+		<script>
+			window.onload = function() {
+				var canvas = document.getElementById('canvas'),
+					context = canvas.getContext('2d'),
+					ball = new Ball(),
+					angle = 0;
+//				ball.x = canvas.width / 2;
+//				ball.y = canvas.height / 2;
+				(function drawFrame() {
+					window.requestAnimationFrame(drawFrame, canvas);
+					context.clearRect(0, 0, canvas.width, canvas.height);
+					ball.y = Math.sin(angle);
+					angle += 0.1;
+					ball.draw(context);
+				}());
+			};
+		</script>
+	</body>
+
+</html>

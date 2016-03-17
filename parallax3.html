@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>http://www.jq22.com/jquery-info178</title>
+	</head>
+
+	<body>
+		<ul id="scene">
+			<li class="layer" data-depth="0.50"><img src="img/board-cloud-1.png" /></li>
+			<li class="layer" data-depth="1.00"><img src="img/board-cloud-2.png" /></li>
+		</ul>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/parallax/parallax.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				var scene = document.getElementById('scene');
+				var parallax = new Parallax(scene);
+			})
+		</script>
+	</body>
+
+</html>

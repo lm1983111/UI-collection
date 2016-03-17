@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		    canvas{
+		    	border: 1px solid #000;
+		    }
+		</style>
+		<script type="text/javascript">
+			function draw(){
+				var canvas = document.getElementById("tutorial");
+				if(canvas.getContext){
+					var ctx = canvas.getContext('2d');
+					
+					//alert(000)
+					ctx.fillRect("50","50","300","10")
+					ctx.font = "48px serif";
+					ctx.fillText("hello",10,50);
+					ctx.strokeText("hello",10,100);
+				}
+			}
+		</script>
+	</head>
+	<body onload="draw()">
+		<canvas id="tutorial" width="550" height="550"></canvas>
+	</body>
+</html>
